@@ -40,6 +40,8 @@ X_t3 = data1_lev(:,label1_lev==f3);
 X_t4 = data1_lev(:,label1_lev==f4);
 
 X0 = [X_t1  X_t2 X_t3 X_t4];
+n = size(X0,2); % new sample size
+
 
 % New labels
 label0 = [ones(sum(label1_lev==f1),1); 2*ones(sum(label1_lev==f2),1); 3*ones(sum(label1_lev==f3),1);  4*ones(sum(label1_lev==f4),1)];
