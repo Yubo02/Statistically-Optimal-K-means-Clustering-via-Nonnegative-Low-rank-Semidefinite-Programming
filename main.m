@@ -42,17 +42,17 @@ X_t4 = data1_lev(:,label1_lev==f4);
 X0 = [X_t1  X_t2 X_t3 X_t4];
 n = size(X0,2); % new sample size
 
-
 % New labels
 label0 = [ones(sum(label1_lev==f1),1); 2*ones(sum(label1_lev==f2),1); 3*ones(sum(label1_lev==f3),1);  4*ones(sum(label1_lev==f4),1)];
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The main part of comparision
 
 
-% Sub-sample n=1800 many data points
+% Sub-sample m many data points
 
-ind_ran = randsample(n,1800);
+m = 1800; % sub-sample size
+ind_ran = randsample(n,m);
 X = X0(:,ind_ran);
 label_true = label0(ind_ran);
 
@@ -111,6 +111,6 @@ error_nnmf = err_rate(Label_nnmf,label_true,K); % mis-clustering error
 nnmf_err = error_nnmf;
 
 %% Final comparison
-Error = [nnmf_err; km_err; bm_err; sc_err; sdp_err];
+MisclusteringError = [nnmf_err; km_err; bm_err; sc_err; sdp_err]
 
 
