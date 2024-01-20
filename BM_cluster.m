@@ -73,7 +73,7 @@ for iter = 1:maxiter
 
 
     % Stopping criteria    
-    if min(rdiff, norm(infeas)/norm(one))<tol
+    if max(rdiff, norm(infeas)/norm(one))<tol
        break
     end
 
