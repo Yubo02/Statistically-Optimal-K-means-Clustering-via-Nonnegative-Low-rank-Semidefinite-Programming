@@ -35,7 +35,7 @@ beta = 10; % Coeffient of the augmented term
 alpha = 1e-6; % Step size
 tol = 1e-6; % Tolerance of stopping criteria
 tol_primal = 1e-3; % Tolerance of Primal update
-maxiter = 250000; % Maximum of iterations
+maxiter = 50000; % Maximum of iterations
 
 %% Projection operator
 proj = @(V) max(V,0)/norm(max(V,0),'fro') * sqrt(K) ;
